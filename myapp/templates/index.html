@@ -1,0 +1,35 @@
+<h1>Write your numbers like this: 53, 5, 1, 2, 21, 65</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+	{% csrf_token %}
+
+	<input type='text' name='numbers'/>
+
+	<button type="submit" value="Submit">Send</button>
+	<br>
+	<select name='algorithm'>
+			<option value="BubleSort">BubleSort</option>
+			<option value="InsertionSort">InsertionSort</option>
+			<option value="MergeSort">MergeSort</option>
+	</select>
+	<br>
+
+	<input type='file' name='myfile'/>
+
+
+</form>
+
+<h2>Your list:
+	{% for number in numbers%}
+		{{ number }},
+	{% endfor %}
+</h2>
+
+<h2>Sorted list:
+	{% for number in sorted_list%}
+		{{ number }},
+	{% endfor %}
+</h2>
+
+{{ text }}
